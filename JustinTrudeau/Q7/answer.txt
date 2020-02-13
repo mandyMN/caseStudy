@@ -1,0 +1,3 @@
+- unusual event = spikes within the over-time evolution graph
+- there can be defined multiple levels of unusual events: L1 (biggest), L2 (average)
+- further the L1 spikes will be analysed
