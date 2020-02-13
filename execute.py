@@ -6,17 +6,17 @@ from caseStudy import JustinTrudeau_InfoClass
     triggers the entire logic, the functions are dependent on each other
 '''
 ###create directory hierarchy
-#create_dir = FormatDirectoryHierarchy()
+create_dir = FormatDirectoryHierarchy()
 directory_name = 'JustinTrudeau'
-#questions = 8
-#create_dir.create_directory(directory_name, questions)
+questions = 8
+create_dir.create_directory(directory_name, questions)
 ###
 
 ###get all information regarding JustinTrudeau and postprocess files
 get_info = JustinTrudeau_InfoClass()
-#question = 1
-#get_info.get_information(question, directory_name)
-#get_info.post_process_info(directory_name+'/Q1')
+question = 1
+get_info.get_information(question, directory_name)
+get_info.post_process_info(directory_name+'/Q1')
 ###
 
 ###get number of articles since 2018-01-01
@@ -38,4 +38,6 @@ articles = get_info.daily_update_evolution(articles)
 get_info.plot_nr_of_articles_evolution(directory_name+'/Q5', date, articles)
 ###
 
-get_info.get_average_per_month(articles)
+###analyse cause of unusual event
+get_info.unusual_events_case(articles, filename, directory_name+'/Q8')
+###

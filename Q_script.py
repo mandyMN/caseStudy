@@ -269,8 +269,24 @@ class JustinTrudeau_InfoClass(object):
 
         return
 
-    def unusual_events_case(self, articles, directory_from):
-        articles
+    def unusual_events_case(self, articles, directory_from, file_to):
+        arr_of_events = []
+        for i in articles:
+            if i[1] == 10:
+                arr_of_events.append(i[0])
+        with open(directory_from) as f:
+            data = json.load(f)
+            all_article_titles = []
+            for i in range(len(data)):
+                t = data[i]["type"]
+                if (str(t) == 'article') & (data[i]["webPublicationDate"][:10] in arr_of_events):
+                    all_article_titles.append([data[i]["webTitle"], data[i]["webPublicationDate"][:10]])
+                else:
+                    continue
+            #print(all_article_titles)
+            with open(file_to + '/titles_unusual_events.txt', 'w') as f:
+                for i in all_article_titles:
+                    f.write(str(i) + '\n')
         return
 
     '''
