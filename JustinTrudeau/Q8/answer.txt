@@ -1,0 +1,3 @@
+- given the titles of the articles from the two L1 spikes the following is deduced:
+    1. cause of the spike from 2018-06-11: period following the G7 summit
+    2. cause of the spike from 2019-12-04: period of NATO summit
